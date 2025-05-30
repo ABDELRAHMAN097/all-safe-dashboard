@@ -45,7 +45,7 @@ const Requests = () => {
                 Payment
               </th>
               <th className="text-center p-3 font-semibold">
-                Payment
+                Room Type
               </th>
               <th className="text-center p-2 font-semibold rounded-tr-[18px]"></th>
             </tr>
@@ -57,7 +57,7 @@ const Requests = () => {
                   type="checkbox"
                   className="form-checkbox h-4 w-4 text-blue-600"
                 />
-                GettyImages-997991030.
+                GettyImages-997991030
               </td>
               <td className="p-3 text-center border-t border-gray-300">
                 12-12-2025
@@ -95,23 +95,26 @@ const Requests = () => {
     </div>
   );
 
-  const BannersSection = () => (
+  const CarsSection = () => (
    <div>
       <div className="overflow-hidden rounded-t-[18px] border border-gray-300">
         <table dir="ltr" className="min-w-full text-start border-collapse">
           <thead>
             <tr className="text-center text-[14px] text-gray-700">
               <th className="text-start p-3 font-semibold rounded-tl-[18px]">
-                Photo
+                User Name
               </th>
               <th className=" text-center p-3 font-semibold">
-                Title 
+                From 
               </th>
                <th className=" text-center p-3 font-semibold">
-                Description
+                To
               </th>
                <th className=" text-center p-3 font-semibold">
                 Date
+              </th>
+              <th className=" text-center p-3 font-semibold">
+                Time
               </th>
               <th className=" text-center p-2 font-semibold rounded-tr-[18px]"></th>
             </tr>
@@ -131,11 +134,15 @@ const Requests = () => {
               <td className="p-3 text-center border-t border-gray-300">
                 description about title
               </td>
-              <td className="p-3 text-center border-t border-gray-300">
-                12-12-2025
+               <td className="p-3 text-center border-t border-gray-300">
+                description about title
               </td>
-              <td className="p-1 text-start border-t border-gray-300 text-gray-400">
-                <div className="flex items-center justify-center gap-2">
+              
+              <td className="p-3 text-center border-t border-gray-300">
+                03:00 pm
+              </td>
+              <td className="p-1 w-[30%] text-start border-t border-gray-300 text-gray-400">
+                <div className="flex items-center justify-end gap-2">
                   <MdDeleteOutline
                     className="text-[19px] cursor-pointer"
                     onClick={() => setShowDeleteModal(true)}
@@ -154,8 +161,8 @@ const Requests = () => {
     switch (activeTab) {
       case "hotel":
         return <HeroSection />;
-      case "banners":
-        return <BannersSection />;
+      case "Cars":
+        return <CarsSection />;
       default:
         return <HeroSection />;
     }
@@ -170,16 +177,16 @@ const Requests = () => {
 
       {/* Tabs Navigation */}
       <div className="flex items-center justify-end gap-8 py-2">
-        {/* Banners */}
+        {/* Cars */}
         <button
-          onClick={() => setActiveTab("banners")}
+          onClick={() => setActiveTab("Cars")}
           className={`text-[16px] ${
-            activeTab === "banners"
+            activeTab === "Cars"
               ? "text-[#134049] font-bold border-b-2 border-[#134049]"
               : "text-[#6B7280]"
           }`}
         >
-          Banners
+          Cars
         </button>
         {/* Hero */}
          <button
